@@ -10,13 +10,16 @@ let f = new Fork(path.join(base, 'src/fork.js'), [
 ]);
 console.log(f);
 
+setTimeout(() => {
+	f.close();
+}, (60 * 1000) * 1);
+
 f.on('error', (err) => {
 	console.log('error', err);
 });
 
 f.on('found', (res) => {
 	console.log('found', res);
-	f.close();
 });
 
 f.on('shutdown', (res) => {
