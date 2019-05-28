@@ -2,8 +2,18 @@
 	"name": "fork.lib",
 	"version": "1.0.1",
 	"keywords": [],
-	"license": "ISC",
+	"homepage": "https://github.com/anzerr/fork.library#readme",
+	"bugs": {
+		"url": "https://github.com/anzerr/fork.library/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:anzerr/fork.library.git"
+	},
+	"license": "MIT",
+	"author": "anzerr",
 	"main": "index.js",
+	"types": "index.d.ts",
 	"scripts": {
 		"test": "node test/test.js"
 	},
@@ -11,7 +21,10 @@
 		"extends": "eslint-config-basic"
 	},
 	"devDependencies": {
-		"eslint": "^5.9.0",
+		"eslint": "5.11.1",
 		"eslint-config-basic": "git+https://git@github.com/anzerr/eslintrc.git"
+	},
+	"engines": {
+		"node": ">= 0.10.0"
 	}
 }
