@@ -1,19 +1,17 @@
 {
 	"name": "fork.lib",
 	"version": "1.0.0",
-	"description": "",
+	"keywords": [],
+	"license": "ISC",
 	"main": "index.js",
 	"scripts": {
 		"test": "node test/test.js"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"eslintConfig": {
+		"extends": "eslint-config-basic"
+	},
 	"devDependencies": {
 		"eslint": "^5.9.0",
 		"eslint-config-basic": "git+https://git@github.com/anzerr/eslintrc.git"
-	},
-	"eslintConfig": {
-		"extends": "eslint-config-basic"
 	}
 }
