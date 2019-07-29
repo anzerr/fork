@@ -12,7 +12,7 @@ console.log(f);
 
 setTimeout(() => {
 	f.close();
-}, (60 * 1000) * 1);
+}, (10 * 1000) * 1);
 
 f.on('error', (err) => {
 	console.log('error', err);

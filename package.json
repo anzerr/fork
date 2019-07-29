@@ -15,7 +15,7 @@
 	"main": "index.js",
 	"types": "index.d.ts",
 	"scripts": {
-		"test": "node test/test.js"
+		"test": "node test/index.js"
 	},
 	"eslintConfig": {
 		"extends": "eslint-config-basic"
