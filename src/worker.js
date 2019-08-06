@@ -1,4 +1,3 @@
-'use strict';
 
 const cp = require('child_process'),
 	events = require('events');
@@ -8,6 +7,7 @@ class Worker extends events {
 	constructor(path, config = {}) {
 		super();
 		this.keys = {1: 'close', 2: 'found'};
+		this.alive = true;
 		this.fork = cp.fork(path, {env: {config: JSON.stringify(config)}});
 		this.fork.on('message', (m) => {
 			let data = Buffer.from(m.data), key = this.keys[data[0]];
@@ -22,12 +22,19 @@ class Worker extends events {
 			this.emit('error', err);
 		});
 		this.fork.on('exit', (code) => {
+			this.alive = false;
 			this.emit('exit', code);
 		});
 	}
 
 	close() {
-		this.fork.send(1);
+		if (this.alive) {
+			try {
+				this.fork.send(1);
+			} catch(e) {
+				// done
+			}
+		}
 		setTimeout(() => {
 			try {
 				this.fork.kill(0);
