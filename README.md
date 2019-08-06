@@ -4,11 +4,11 @@ Util to fork work to make pow other cpu intensive work easier
 
 #### `Install`
 ``` bash
-npm install --save git+https://git@github.com/anzerr/fork.library.git
+npm install --save git+https://github.com/anzerr/fork.library.git
 ```
 
 ### `Example`
-index.js
+split work up
 ``` javascript
 const {Fork} = require('fork.library'),
 	path = require('path');
@@ -29,7 +29,7 @@ f.on('error', (err) => {
 	console.log('shutdown', res, f.result());
 });
 ```
-fork.js
+worker (fork.js)
 ``` javascript
 const {Client} = require('fork.library'),
 	crypto = require('crypto');
