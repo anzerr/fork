@@ -5,6 +5,7 @@ Util to fork work to make pow other cpu intensive work easier
 #### `Install`
 ``` bash
 npm install --save git+https://github.com/anzerr/fork.library.git
+npm install --save @anzerr/fork.lib
 ```
 
 ### `Example`
